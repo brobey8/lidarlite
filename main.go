@@ -1,7 +1,6 @@
 package lidarlite       
 
 import (                                                                                                                          
-        "time"                                                                                                                    
         "github.com/kidoman/embd"                                                                                                 
         _ "github.com/kidoman/embd/host/rpi" // This loads the RPi driver                                                         
 )                                                                                                                                 
@@ -44,12 +43,10 @@ func (d *LIDARLITE) ReadDistance() (byte, error) {
 	if err != nil {
 		return 0, err
 	}
-	/*
 	msb, err := d.Bus.ReadByteFromReg(address, kLidarLiteCalculateDistanceMSB)
 	if err != nil {
 		return 0, err
 	}
-	*/
 	lsb, err := d.Bus.ReadByteFromReg(address, kLidarLiteCalculateDistanceLSB)
 	if err != nil {
 		return 0, err
